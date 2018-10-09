@@ -1,0 +1,399 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Task Managment System Requests",
+		"_postman_id": "e8a55cd6-166e-54a6-c10b-717bbfbb29af",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin Requests",
+			"description": "",
+			"item": [
+				{
+					"name": "Admin Login",
+					"request": {
+						"url": "http://localhost:8095/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"username\":\"admin123\",\n   \"password\":\"123adminPassword987\",\n   \"rememberMe\": true\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Getting Roles",
+					"request": {
+						"url": "http://localhost:8095/admin/roles",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI1ZjM1NWI4Ni0xZTE2LTQ2N2QtOWU5Ni1jOTZkNzdiM2M2YjAiLCJjcmVhdGVkIjoxNTM5MDc5MjEyNzQ4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.qBrPcBR-kYv5hBMwaw0M-bxF_tIwxq-PSmUAyyYoigk",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Adding User",
+					"request": {
+						"url": "http://localhost:8095/admin/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \"name\":\"AddedUser1\",\n   \"userName\":\"added user name 1\",\n   \"password\":\"qwerty\",\n   \"roleId\":\"13bd7364-3f26-4651-af3b-3be11ce77954\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Getting Users",
+					"request": {
+						"url": "http://localhost:8095/admin/users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI1ZjM1NWI4Ni0xZTE2LTQ2N2QtOWU5Ni1jOTZkNzdiM2M2YjAiLCJjcmVhdGVkIjoxNTM5MDc5MjEyNzQ4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.qBrPcBR-kYv5hBMwaw0M-bxF_tIwxq-PSmUAyyYoigk",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Updating User ",
+					"request": {
+						"url": "http://localhost:8095/admin/users",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"id\":\"d97c16e0-f59e-4917-9580-fbe97715e4c8\",\n   \"name\":\"UpdatedUser\",\n   \"userName\":\"updated user\",\n   \"password\":\"UpdatedPassword\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Adding Project",
+					"request": {
+						"url": "http://localhost:8095/admin/projects",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \"name\":\"pr3\",\n   \"description\":\"prDesc3\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Getting Projects",
+					"request": {
+						"url": "http://localhost:8095/admin/projects",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI1ZjM1NWI4Ni0xZTE2LTQ2N2QtOWU5Ni1jOTZkNzdiM2M2YjAiLCJjcmVhdGVkIjoxNTM5MDc5MjEyNzQ4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.qBrPcBR-kYv5hBMwaw0M-bxF_tIwxq-PSmUAyyYoigk",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Getting Project By Id",
+					"request": {
+						"url": "http://localhost:8095/admin/projects/d8825dc0-f991-40a2-8411-f295d8f1817f",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Updating Project",
+					"request": {
+						"url": "http://localhost:8095/admin/projects",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"d8825dc0-f991-40a2-8411-f295d8f1817f\",\n    \"name\": \"ggggg\",\n    \"description\": \"gg ggg gggg\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Adding Task",
+					"request": {
+						"url": "http://localhost:8095/admin/tasks",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"story\":\"1 task story ADDED\",\n\t\"description\":\"1 task description ADDED/second round\",\n\t\"projectId\":\"0a0b29aa-cb04-4c5a-8802-86e1239dfcdd\",\n\t\"userId\":\"e5f2c293-26e7-4261-bb74-f73bb52b8783\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Getting All Tasks",
+					"request": {
+						"url": "http://localhost:8095/admin/tasks",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI1ZjM1NWI4Ni0xZTE2LTQ2N2QtOWU5Ni1jOTZkNzdiM2M2YjAiLCJjcmVhdGVkIjoxNTM5MDc5MjEyNzQ4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.qBrPcBR-kYv5hBMwaw0M-bxF_tIwxq-PSmUAyyYoigk",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Getting Tasks By User Id ",
+					"request": {
+						"url": "http://localhost:8095/admin/tasks/05800582-0a56-49e3-bb71-263e3982aeb8",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI1ZjM1NWI4Ni0xZTE2LTQ2N2QtOWU5Ni1jOTZkNzdiM2M2YjAiLCJjcmVhdGVkIjoxNTM5MDc5MjEyNzQ4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.qBrPcBR-kYv5hBMwaw0M-bxF_tIwxq-PSmUAyyYoigk",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Updating Task",
+					"request": {
+						"url": "http://localhost:8095/admin/tasks",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"06d2d495-fe50-4e9b-aae9-8c3abb770a08\",\n\t\"story\":\"1 task story ADDED/updated\",\n\t\"description\":\"modifiedDesc\",\n\t\"projectId\":\"0a0b29aa-cb04-4c5a-8802-86e1239dfcdd\",\n\t\"userId\":\"e5f2c293-26e7-4261-bb74-f73bb52b8783\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Requests",
+			"description": "",
+			"item": [
+				{
+					"name": "User Login",
+					"request": {
+						"url": "http://localhost:8095/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"username\":\"userName1\",\n   \"password\":\"user1pass\",\n   \"rememberMe\": true\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Loged In User",
+					"request": {
+						"url": "http://localhost:8095/user/users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Loged In User",
+					"request": {
+						"url": "http://localhost:8095/user/users",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n   \"name\":\"UpdatedUser\",\n   \"userName\":\"updated userName\",\n   \"password\":\"UpdatedPassword\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Tasks For Loged In User",
+					"request": {
+						"url": "http://localhost:8095/user/tasks",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task Assigned For Logged In User",
+					"request": {
+						"url": "http://localhost:8095/user/tasks",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"id\": \"eb591435-b594-48e5-b7ff-d958bfa27a6d\",\n\"story\": \"1 task story updated\",\n\"description\": \"\",\n\"userId\": \"\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
