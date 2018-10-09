@@ -61,7 +61,7 @@ public class ApplicationEventListeners {
             abstractRepository.saveAll(Lists.newArrayList(user1, user2, admin));
 
             final APIUserDetail apiAdminDetail = StaticData.createUserDetail(adminRolesSet, adminUserName, adminPassword, admin);
-            final APIUserDetail apiUserDetail = StaticData.createUserDetail(userRolesSet, "UserName 1", "user1pass", user1);
+            final APIUserDetail apiUserDetail = StaticData.createUserDetail(userRolesSet, "userName1", "user1pass", user1);
             final APIUserDetail apiUserDetail2 = StaticData.createUserDetail(userRolesSet, "UserName 2", "user2pass", user2);
             abstractRepository.saveAll(Lists.newArrayList(apiUserDetail, apiUserDetail2, apiAdminDetail));
             logger.debug("Done saving other users.");
