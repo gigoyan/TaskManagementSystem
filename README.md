@@ -10,5 +10,4 @@ Login as "USER" with (userName1) username and (user1pass) password.
 You can change DB credential settings from application.properties file in source code to run application in localhost.
 
 You can find Postman requests collections in project directory
-(Admin Requests.postman_collection.json)
-(User Requests.postman_collection.json)
+(TMSRequests.postman_collection.json)
