@@ -1,0 +1,115 @@
+{
+	"variables": [],
+	"info": {
+		"name": "User Requsts",
+		"_postman_id": "6956c42d-592f-b19e-16a4-c83a3af054b7",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User Login",
+			"request": {
+				"url": "http://localhost:8095/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"username\":\"userName1\",\n   \"password\":\"user1pass\",\n   \"rememberMe\": true\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Loged In User",
+			"request": {
+				"url": "http://localhost:8095/user/users",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Loged In User",
+			"request": {
+				"url": "http://localhost:8095/user/users",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n   \"name\":\"UpdatedUser\",\n   \"userName\":\"updated userName\",\n   \"password\":\"UpdatedPassword\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Tasks For Loged In User",
+			"request": {
+				"url": "http://localhost:8095/user/tasks",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task Assigned For Logged In User",
+			"request": {
+				"url": "http://localhost:8095/user/tasks",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"id\": \"eb591435-b594-48e5-b7ff-d958bfa27a6d\",\n\"story\": \"1 task story updated\",\n\"description\": \"\",\n\"userId\": \"\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
