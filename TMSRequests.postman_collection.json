@@ -27,29 +27,29 @@
 							"mode": "raw",
 							"raw": "{\n   \"username\":\"admin123\",\n   \"password\":\"123adminPassword987\",\n   \"rememberMe\": true\n}"
 						},
-						"description": ""
+						"description": "Copy authorization token from response header for other requests."
 					},
 					"response": []
 				},
 				{
-					"name": "Getting Roles",
+					"name": "Get Roles",
 					"request": {
 						"url": "http://localhost:8095/admin/roles",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI1ZjM1NWI4Ni0xZTE2LTQ2N2QtOWU5Ni1jOTZkNzdiM2M2YjAiLCJjcmVhdGVkIjoxNTM5MDc5MjEyNzQ4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.qBrPcBR-kYv5hBMwaw0M-bxF_tIwxq-PSmUAyyYoigk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
 						"body": {},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header.\nCopy roleId for (Add User) request."
 					},
 					"response": []
 				},
 				{
-					"name": "Adding User",
+					"name": "Add User",
 					"request": {
 						"url": "http://localhost:8095/admin/users",
 						"method": "POST",
@@ -61,37 +61,37 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \"name\":\"AddedUser1\",\n   \"userName\":\"added user name 1\",\n   \"password\":\"qwerty\",\n   \"roleId\":\"13bd7364-3f26-4651-af3b-3be11ce77954\"\n}"
+							"raw": "{  \"name\":\"AddedUser1\",\n   \"userName\":\"added user name 1\",\n   \"password\":\"qwerty\",\n   \"roleId\":\"f93dc446-4a8d-465e-b4da-a43a2ddc7ada\"\n}"
 						},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header.\nAdd the necessary information for user in request body. Past the roleId from (Get Roles) request."
 					},
 					"response": []
 				},
 				{
-					"name": "Getting Users",
+					"name": "Get Users",
 					"request": {
 						"url": "http://localhost:8095/admin/users",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI1ZjM1NWI4Ni0xZTE2LTQ2N2QtOWU5Ni1jOTZkNzdiM2M2YjAiLCJjcmVhdGVkIjoxNTM5MDc5MjEyNzQ4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.qBrPcBR-kYv5hBMwaw0M-bxF_tIwxq-PSmUAyyYoigk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
 						"body": {},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header. Copy user id for (Update User), (Get Tasks By User Id) or (Update Task) requests."
 					},
 					"response": []
 				},
 				{
-					"name": "Updating User ",
+					"name": "Update User ",
 					"request": {
 						"url": "http://localhost:8095/admin/users",
 						"method": "PUT",
@@ -103,20 +103,20 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \n   \"id\":\"d97c16e0-f59e-4917-9580-fbe97715e4c8\",\n   \"name\":\"UpdatedUser\",\n   \"userName\":\"updated user\",\n   \"password\":\"UpdatedPassword\"\n}"
+							"raw": "{  \n   \"id\":\"034edbc6-e6f4-45df-b18b-599b96d77f1c\",\n   \"name\":\"UpdatedUser\",\n   \"userName\":\"updated user\",\n   \"password\":\"UpdatedPassword\"\n}"
 						},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header. Add the necessary information for updating the user in request body. Past the user id from (Get Users) request."
 					},
 					"response": []
 				},
 				{
-					"name": "Adding Project",
+					"name": "Add Project",
 					"request": {
 						"url": "http://localhost:8095/admin/projects",
 						"method": "POST",
@@ -128,7 +128,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
@@ -136,46 +136,46 @@
 							"mode": "raw",
 							"raw": "{  \"name\":\"pr3\",\n   \"description\":\"prDesc3\"\n}"
 						},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header. Add the necessary information for project in request body."
 					},
 					"response": []
 				},
 				{
-					"name": "Getting Projects",
+					"name": "Get Projects",
 					"request": {
 						"url": "http://localhost:8095/admin/projects",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI1ZjM1NWI4Ni0xZTE2LTQ2N2QtOWU5Ni1jOTZkNzdiM2M2YjAiLCJjcmVhdGVkIjoxNTM5MDc5MjEyNzQ4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.qBrPcBR-kYv5hBMwaw0M-bxF_tIwxq-PSmUAyyYoigk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
 						"body": {},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header. Copy project id for (Get Project By Id) request."
 					},
 					"response": []
 				},
 				{
-					"name": "Getting Project By Id",
+					"name": "Get Project By Id",
 					"request": {
-						"url": "http://localhost:8095/admin/projects/d8825dc0-f991-40a2-8411-f295d8f1817f",
+						"url": "http://localhost:8095/admin/projects/7d1dd0af-b8ba-42e3-b5c6-e7c29c",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
 						"body": {},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header. Past project id from (Get Project) request in URL after \"projects/\""
 					},
 					"response": []
 				},
 				{
-					"name": "Updating Project",
+					"name": "Update Project",
 					"request": {
 						"url": "http://localhost:8095/admin/projects",
 						"method": "PUT",
@@ -187,7 +187,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
@@ -195,12 +195,12 @@
 							"mode": "raw",
 							"raw": "{\n    \"id\": \"d8825dc0-f991-40a2-8411-f295d8f1817f\",\n    \"name\": \"ggggg\",\n    \"description\": \"gg ggg gggg\"\n}"
 						},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header. Add the necessary information for updating project in request body. Past project id from (Get Projects) request."
 					},
 					"response": []
 				},
 				{
-					"name": "Adding Task",
+					"name": "Add Task",
 					"request": {
 						"url": "http://localhost:8095/admin/tasks",
 						"method": "POST",
@@ -212,7 +212,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
@@ -220,46 +220,46 @@
 							"mode": "raw",
 							"raw": "{\n\t\"story\":\"1 task story ADDED\",\n\t\"description\":\"1 task description ADDED/second round\",\n\t\"projectId\":\"0a0b29aa-cb04-4c5a-8802-86e1239dfcdd\",\n\t\"userId\":\"e5f2c293-26e7-4261-bb74-f73bb52b8783\"\n}"
 						},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header. Add the necessary information for task in request body."
 					},
 					"response": []
 				},
 				{
-					"name": "Getting All Tasks",
+					"name": "Get All Tasks",
 					"request": {
 						"url": "http://localhost:8095/admin/tasks",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI1ZjM1NWI4Ni0xZTE2LTQ2N2QtOWU5Ni1jOTZkNzdiM2M2YjAiLCJjcmVhdGVkIjoxNTM5MDc5MjEyNzQ4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.qBrPcBR-kYv5hBMwaw0M-bxF_tIwxq-PSmUAyyYoigk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
 						"body": {},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header. Copy task id for (Update Task) request."
 					},
 					"response": []
 				},
 				{
-					"name": "Getting Tasks By User Id ",
+					"name": "Get Tasks By User Id ",
 					"request": {
-						"url": "http://localhost:8095/admin/tasks/05800582-0a56-49e3-bb71-263e3982aeb8",
+						"url": "http://localhost:8095/admin/tasks/034edbc6-e6f4-45df-b18b-599b96d77f1",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI1ZjM1NWI4Ni0xZTE2LTQ2N2QtOWU5Ni1jOTZkNzdiM2M2YjAiLCJjcmVhdGVkIjoxNTM5MDc5MjEyNzQ4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.qBrPcBR-kYv5hBMwaw0M-bxF_tIwxq-PSmUAyyYoigk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
 						"body": {},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header. Past user id from (Get Users) request in URL after \"tasks/\"."
 					},
 					"response": []
 				},
 				{
-					"name": "Updating Task",
+					"name": "Update Task",
 					"request": {
 						"url": "http://localhost:8095/admin/tasks",
 						"method": "PUT",
@@ -271,15 +271,15 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIyYWU3YTIxZC05MDNjLTQzYmEtYjYwMC01NGM1NTkxMzE5NjkiLCJjcmVhdGVkIjoxNTM4NDc4Nzk4NjAyLCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.46kas3-TKc3DJUN3ZouxsJXPQPJy2ibXal6gV_A0hyk",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI2MDU1Mzg4Ni0xNmE1LTQ5NDAtOGFmZC02MjZlNDcwNDM3ZDAiLCJjcmVhdGVkIjoxNTM5MjU5NTY2OTc2LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.KhLGAvY9jAXnfG3UtzmFmW-GwlF3zfhY72PyYto2E6U",
 								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\":\"06d2d495-fe50-4e9b-aae9-8c3abb770a08\",\n\t\"story\":\"1 task story ADDED/updated\",\n\t\"description\":\"modifiedDesc\",\n\t\"projectId\":\"0a0b29aa-cb04-4c5a-8802-86e1239dfcdd\",\n\t\"userId\":\"e5f2c293-26e7-4261-bb74-f73bb52b8783\"\n}"
+							"raw": "{\n\t\"id\":\"6b80c28c-74c6-4212-a47e-ee1c7d6385af\",\n\t\"story\":\"1 task story ADDED/updated\",\n\t\"description\":\"modifiedDesc\",\n\t\"projectId\":\"\",\n\t\"userId\":\"\"\n}"
 						},
-						"description": ""
+						"description": "Past the authorization token from (Admin Login) in request header. Add the necessary information for updating task in request body.Past task id from (Get All Tasks) or (Get Tasks By User Id) requests. Past projectId(if necessary) from (Get Projects) request. Past userId(if necessary) from (Get Users) request."
 					},
 					"response": []
 				}
@@ -305,41 +305,41 @@
 							"mode": "raw",
 							"raw": "{\n   \"username\":\"userName1\",\n   \"password\":\"user1pass\",\n   \"rememberMe\": true\n}"
 						},
-						"description": ""
+						"description": "Copy authorization token from response header for other requests."
 					},
 					"response": []
 				},
 				{
-					"name": "Get Loged In User",
+					"name": "Get User",
 					"request": {
 						"url": "http://localhost:8095/user/users",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxM2ExNDEzNS01MTc1LTQ4OWEtOWY4MC0yZDI3YzMyODg5MmMiLCJjcmVhdGVkIjoxNTM5MjYzOTgyNTg3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.UIRe1FrCSu-gpsZ1Gqv_pAeZjGuU0Vv9GM9ty3bCjc8",
 								"description": ""
 							}
 						],
 						"body": {},
-						"description": ""
+						"description": "Past the authorization token from (User Login) in request header."
 					},
 					"response": []
 				},
 				{
-					"name": "Update Loged In User",
+					"name": "Update User",
 					"request": {
 						"url": "http://localhost:8095/user/users",
 						"method": "PUT",
 						"header": [
 							{
-								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+								"key": "Content-Type",
+								"value": "application/json",
 								"description": ""
 							},
 							{
-								"key": "Content-Type",
-								"value": "application/json",
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxM2ExNDEzNS01MTc1LTQ4OWEtOWY4MC0yZDI3YzMyODg5MmMiLCJjcmVhdGVkIjoxNTM5MjYzOTgyNTg3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.UIRe1FrCSu-gpsZ1Gqv_pAeZjGuU0Vv9GM9ty3bCjc8",
 								"description": ""
 							}
 						],
@@ -347,36 +347,53 @@
 							"mode": "raw",
 							"raw": "{  \n   \"name\":\"UpdatedUser\",\n   \"userName\":\"updated userName\",\n   \"password\":\"UpdatedPassword\"\n}"
 						},
-						"description": ""
+						"description": "Past the authorization token from (User Login) in request header. Add the necessary information for updating the user in request body."
 					},
 					"response": []
 				},
 				{
-					"name": "Get All Tasks For Loged In User",
+					"name": "Get All Tasks",
 					"request": {
 						"url": "http://localhost:8095/user/tasks",
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI5MWVjOWNkOC04YTNlLTQ0YmEtOTJkNC0wMDQ3MjRkNDUzODkiLCJjcmVhdGVkIjoxNTM5MjY3NDAxMTA4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.Vk3ueUgx9DVxWdll-filMg5hnTvbPCrd7U84AW1nBGQ",
 								"description": ""
 							}
 						],
 						"body": {},
-						"description": ""
+						"description": "Past the authorization token from (User Login) in request header. Copy task id for (Update Task) request."
 					},
 					"response": []
 				},
 				{
-					"name": "Update Task Assigned For Logged In User",
+					"name": "Get Other Users",
+					"request": {
+						"url": "http://localhost:8095/user/users/others",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI5MWVjOWNkOC04YTNlLTQ0YmEtOTJkNC0wMDQ3MjRkNDUzODkiLCJjcmVhdGVkIjoxNTM5MjY3NDAxMTA4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.Vk3ueUgx9DVxWdll-filMg5hnTvbPCrd7U84AW1nBGQ",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Past the authorization token from (User Login) in request header. Copy user id for (Update Task) request."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
 					"request": {
 						"url": "http://localhost:8095/user/tasks",
 						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiIxNGExZjhhOC02NDQ0LTRjNjctOGNiMS1jODcwMTYyY2ZkMDciLCJjcmVhdGVkIjoxNTM5MDc5Mzk5MDQ3LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.sy_gGYLkVY42J1q_d9cluVHtVp5Ziu6GOcq2hv3Zogc",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyZGV0YWlsaWQiOiI5MWVjOWNkOC04YTNlLTQ0YmEtOTJkNC0wMDQ3MjRkNDUzODkiLCJjcmVhdGVkIjoxNTM5MjY3NDAxMTA4LCJhY3RpdmUiOnRydWUsInR5cGUiOiJMT0dJTl9SRU1FTUJFUl9NRSJ9.Vk3ueUgx9DVxWdll-filMg5hnTvbPCrd7U84AW1nBGQ",
 								"description": ""
 							},
 							{
@@ -387,9 +404,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\"id\": \"eb591435-b594-48e5-b7ff-d958bfa27a6d\",\n\"story\": \"1 task story updated\",\n\"description\": \"\",\n\"userId\": \"\"\n}"
+							"raw": "{\n\"id\": \"e23ec799-cfe1-4738-bcda-db4325597bd0\",\n\"story\": \"4 task story updated\",\n\"description\": \"4 task reassigned\",\n\"userId\": \"4c6e99ec-a359-4b92-8c83-18a2c37d17f1\"\n}"
 						},
-						"description": ""
+						"description": "Past the authorization token from (User Login) in request header. Add the necessary information for updating task in request body. Past task id from (Get All Tasks) request. Past userId(if necessary) from (Get Other Users) request for reassigning task to other user."
 					},
 					"response": []
 				}

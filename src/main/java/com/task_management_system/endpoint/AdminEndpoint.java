@@ -69,7 +69,7 @@ public class AdminEndpoint {
 
     @RequestMapping(method = RequestMethod.GET, value = "users")
     public List<UserResponseDto> getAllUsers(){
-        final List<User> users = userService.getAll();
+        final List<User> users = userService.getAllByAdmin();
         return userConverter.convertEntityToDtoList(users);
     }
 

@@ -52,6 +52,14 @@ public class UserEndpoint {
         return userResponseDto;
     }
 
+    @RequestMapping(method = RequestMethod.GET, value = "users/others")
+    public List<UserResponseDto> getAllUsers(){
+        final APIUserDetail apiUserDetail = (APIUserDetail) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        final String currentUserDetailId = apiUserDetail.getId();
+        final List<User> users = userService.getAll(currentUserDetailId);
+        return userConverter.convertEntityToDtoList(users);
+    }
+
     @RequestMapping(method = RequestMethod.PUT, value = "users")
     public UserResponseDto updateUser(@RequestBody final UserModificationDto userModificationDto){
         final APIUserDetail apiUserDetail = (APIUserDetail) SecurityContextHolder.getContext().getAuthentication().getPrincipal();

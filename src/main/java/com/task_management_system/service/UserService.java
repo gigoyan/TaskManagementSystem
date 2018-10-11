@@ -15,6 +15,8 @@ public interface UserService extends UserDetailsService {
 
     User get(String id);
 
-    List<User> getAll();
+    List<User> getAllByAdmin();
+
+    List<User> getAll(String userDetailId);
 
 }

@@ -2,8 +2,11 @@ package com.task_management_system.service.impl;
 
 import com.task_management_system.entity.Project;
 import com.task_management_system.entity.Task;
+import com.task_management_system.entity.User;
 import com.task_management_system.repository.TaskRepository;
+import com.task_management_system.service.ProjectService;
 import com.task_management_system.service.TaskService;
+import com.task_management_system.service.UserService;
 import com.task_management_system.service.exception.EntityNotFoundException;
 import com.task_management_system.service.exception.NotAuthorizedUserException;
 import com.task_management_system.service.model.taskRequests.TaskCreationRequest;
@@ -23,10 +26,10 @@ public class TaskServiceImpl implements TaskService {
     private TaskRepository taskRepository;
 
     @Autowired
-    private ProjectServiceImpl projectService;
+    private ProjectService projectService;
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @Override
     public Task get(String id) {
@@ -97,8 +100,8 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public Map<String, List<Task>> getAllByUser(String userId) {
         notEmpty(userId, "user request id can not be null");
-
-        final List<Task> tasks = taskRepository.findAllByUser_Id(userId);
+        final User user = userService.get(userId);
+        final List<Task> tasks = taskRepository.findAllByUser_Id(user.getId());
         return mappingTasks(tasks);
     }
 

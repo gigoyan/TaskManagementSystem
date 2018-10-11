@@ -3,6 +3,7 @@ package com.task_management_system.service.impl;
 import com.task_management_system.entity.APIUserDetail;
 import com.task_management_system.entity.Role;
 import com.task_management_system.entity.User;
+import com.task_management_system.misc.RoleType;
 import com.task_management_system.repository.APIUserDetailRepository;
 import com.task_management_system.repository.UserRepository;
 import com.task_management_system.service.RoleService;
@@ -15,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -95,8 +97,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> getAll() {
+    public List<User> getAllByAdmin() {
         final List<User> users = userRepository.findAll();
+        notEmpty(users, "users can not be empty");
+        return users;
+    }
+
+    @Override
+    public List<User> getAll(String userDetailId) {
+        final List<User> users = new ArrayList<>();
+        final Role adminRole = roleService.getByRoleType(RoleType.ROLE_ADMIN);
+        final List<APIUserDetail> userDetails = apiUserDetailRepository.findAll();
+        for (APIUserDetail userDetail: userDetails) {
+            if (userDetail.getAuthorities().contains(adminRole) || userDetail.getId().equals(userDetailId)){
+                continue;
+            }
+            users.add(userDetail.getUser());
+        }
         notEmpty(users, "users can not be empty");
         return users;
     }
